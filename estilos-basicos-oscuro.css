@@ -553,7 +553,7 @@ table td .badge {
 }
 
 /* ==========================================================================
-   15. FORMULARIO MINIMALISTA CON LÍNEA EXPANSIVA DESDE EL CENTRO
+   15. FORMULARIO MINIMALISTA CON LÍNEA EXPANSIVA DESDE EL CENTRO (CORREGIDO)
    ========================================================================== */
 
 /* Contenedor relativo indispensable para posicionar la línea animada */
@@ -570,10 +570,20 @@ table td .badge {
   border-radius: 0;
   background-color: transparent;
   padding: 10px 4px;
-  outline: none;
+  outline: none; /* ELIMINA EL RECUADRO AZUL/BLANCO POR DEFECTO DEL NAVEGADOR */
   width: 100%;
   color: #f8f9fa;
+  box-shadow: none; /* EVITA CUALQUIER DESTELLO O SRA DE RECUADRO */
   transition: border-color 0.3s ease;
+}
+
+/* Forzar que al hacer foco no aparezca NADA del recuadro original */
+.form-minimalista .minimalista-animado input:focus,
+.form-minimalista .minimalista-animado textarea:focus,
+.form-minimalista .minimalista-animado .form-control:focus {
+  outline: none !important;
+  border-color: #55504c !important; /* Mantiene la línea gris de fondo intacta */
+  box-shadow: none !important; /* Bloquea cualquier brillo de recuadro */
 }
 
 /* Línea base estática que se expandirá */
@@ -585,6 +595,7 @@ table td .badge {
   height: 2px;       /* El grosor del destello */
   background-color: #ffffff; /* Color blanco brillante al hacer foco */
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none; /* Evita que la línea interfiera con los clics */
 }
 
 /* CUANDO EL INPUT HACE FOCUS: La línea se estira al 100% y se recoloca a la izquierda */
