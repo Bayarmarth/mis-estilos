@@ -552,6 +552,58 @@ table td .badge {
   }
 }
 
+/* ==========================================================================
+   15. FORMULARIO MINIMALISTA CON LÍNEA EXPANSIVA DESDE EL CENTRO
+   ========================================================================== */
 
+/* Contenedor relativo indispensable para posicionar la línea animada */
+.minimalista-animado {
+  position: relative;
+}
+
+/* Estilo base del input sin bordes y transparente */
+.form-minimalista .minimalista-animado input,
+.form-minimalista .minimalista-animado textarea,
+.form-minimalista .minimalista-animado .form-control {
+  border: none;
+  border-bottom: 2px solid #55504c; /* Tu color de borde gris de base */
+  border-radius: 0;
+  background-color: transparent;
+  padding: 10px 4px;
+  outline: none;
+  width: 100%;
+  color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+/* Línea base estática que se expandirá */
+.minimalista-animado .linea-efecto {
+  position: absolute;
+  bottom: 0;
+  left: 50%;         /* Se posiciona justo en el centro */
+  width: 0;          /* Comienza midiendo cero */
+  height: 2px;       /* El grosor del destello */
+  background-color: #ffffff; /* Color blanco brillante al hacer foco */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* CUANDO EL INPUT HACE FOCUS: La línea se estira al 100% y se recoloca a la izquierda */
+.minimalista-animado input:focus ~ .linea-efecto,
+.minimalista-animado textarea:focus ~ .linea-efecto {
+  width: 100%;
+  left: 0;
+}
+
+/* Ocultar etiquetas manteniendo la accesibilidad intacta */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 
 
