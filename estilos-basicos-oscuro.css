@@ -283,31 +283,274 @@ textarea.form-control {
   margin-top: 24px;
 }
 
+/* Margen Derecho (Margin Right) */
+.mr-1 {
+  margin-right: 8px;
+}
+.mr-2 {
+  margin-right: 16px;
+}
+.mr-3 {
+  margin-right: 24px;
+}
+
+/* Margen Izquierdo (Margin Left) */
+.ml-1 {
+  margin-left: 8px;
+}
+.ml-2 {
+  margin-left: 16px;
+}
+.ml-3 {
+  margin-left: 24px;
+}
+
+/* Margen Horizontal Combinado (Izquierda y Derecha a la vez) */
+.mx-1 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.mx-2 {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.mx-3 {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/* Margen Horizontal Automático (Ideal para centrar bloques fijos) */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* Texto centrado */
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 /* Centrar elementos (bloques, botones o divs) en su contenedor */
 .flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* Centrado h y v, se aplica al padre (centra todo) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .block-center {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  /* Centrado solo h, se aplica al elemento */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
 }
 
 /* Tamaños de letras (utilidades de fuentes) */
-.fs-1 { font-size: 2.5rem; }
-.fs-2 { font-size: 2rem; }
-.fs-3 { font-size: 1.75rem; }
-.fs-4 { font-size: 1.5rem; }
-.fs-5 { font-size: 1.25rem; }
-.fs-6 { font-size: 1rem; }
+.fs-1 {
+  font-size: 0.5rem;
+}
+
+.fs-2 {
+  font-size: 1rem;
+}
+
+.fs-3 {
+  font-size: 1.25rem;
+}
+
+.fs-4 {
+  font-size: 1.80rem;
+}
+
+.fs-5 {
+  font-size: 2.5rem;
+}
+
+.fs-6 {
+  font-size: 3rem;
+}
+
+/* ==========================================================================
+   12. TABLAS MODERNAS (Adaptadas al Framework Oscuro)
+   ========================================================================== */
+
+/* Contenedor responsivo para evitar que la tabla rompa el diseño en móviles */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo general de la tabla */
+table,
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #3d3a37;
+  /* Tu color Greige Oscuro */
+  color: #f8f9fa;
+  font-family: inherit;
+  font-size: 15px;
+  text-align: left;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* Cabecera de la tabla */
+table thead tr {
+  background-color: #2f3538;
+  /* Tu fondo oscuro general */
+  border-bottom: 3px solid #55504c;
+  /* Tu color de borde */
+  color: #ffffff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+}
+
+/* Celdas de la tabla (Cabecera y Cuerpo) */
+table th,
+table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #55504c;
+  /* Líneas divisorias finas */
+}
+
+/* Filas alternas (Efecto cebra sutil) */
+table tbody tr:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Última fila sin borde inferior para limpiar el diseño */
+table tbody tr:last-of-type {
+  border-bottom: none;
+}
+
+/* Efecto Hover interactivo moderno al pasar el ratón por la fila */
+table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Estilos para badges o etiquetas dentro de las celdas (opcional) */
+table td .badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   13. UTILIDADES FLEXBOX (Distribución y Alineación)
+   ========================================================================== */
+
+/* Conector base (Activa Flexbox en el contenedor) */
+.d-flex {
+  display: flex;
+}
+
+/* Direcciones del flujo */
+.flex-row {
+  flex-direction: row; /* Horizontal (por defecto) */
+}
+.flex-column {
+  flex-direction: column; /* Vertical (uno abajo de otro) */
+}
+
+/* Distribución de espacio horizontal (Justify Content) */
+.justify-between {
+  justify-content: space-between; /* Espacio máximo entre elementos */
+}
+.justify-around {
+  justify-content: space-around; /* Espacio equitativo alrededor */
+}
+.justify-evenly {
+  justify-content: space-evenly; /* Espacio idéntico entre elementos y bordes */
+}
+.justify-start {
+  justify-content: flex-start; /* Alineados al inicio (izquierda) */
+}
+.justify-end {
+  justify-content: flex-end; /* Alineados al final (derecha) */
+}
+.justify-center {
+  justify-content: center; /* Centrados horizontalmente */
+}
+
+/* Alineación vertical interna (Align Items) */
+.align-center {
+  align-items: center; /* Centrado vertical perfecto de los hijos */
+}
+.align-start {
+  align-items: flex-start; /* Alineados arriba */
+}
+.align-end {
+  align-items: flex-end; /* Alineados abajo */
+}
+
+/* Separación inteligente (Gap) - Evita usar márgenes entre botones */
+.gap-1 {
+  gap: 8px;
+}
+.gap-2 {
+  gap: 16px;
+}
+.gap-3 {
+  gap: 24px;
+}
+
+/* ==========================================================================
+   14. REJILLA GRID BÁSICA (Diseño de Columnas Adaptable)
+   ========================================================================== */
+
+/* Contenedor principal del Grid */
+.grid {
+  display: grid;
+  gap: 16px; /* Separación estándar entre elementos (equivalente a mb-2/gap-2) */
+  margin-bottom: 16px;
+}
+
+/* Variación con separación más grande */
+.grid-gap-lg {
+  gap: 24px;
+}
+
+/* --- REJILLAS AUTOMÁTICAS Y RESPONSIVAS (No necesitan Media Queries) --- */
+
+/* Rejilla inteligente: Crea columnas de mínimo 250px y se adapta sola al espacio disponible */
+.grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* --- REJILLAS CON COLUMNAS FIJAS --- */
+
+/* 2 Columnas idénticas */
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 Columnas idénticas */
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4 Columnas idénticas */
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* --- DISEÑO RESPONSIVO BÁSICO PARA MÓVILES --- */
+@media (max-width: 768px) {
+  /* En móviles, las rejillas fijas de 2, 3 o 4 columnas se transforman a 1 sola columna para que no se aplasten */
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
 
 
 
